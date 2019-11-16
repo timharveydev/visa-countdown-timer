@@ -1,0 +1,18 @@
+Create a personalised message ("good morning/afternoon/evening" etc.)
+
+Create a visa countdown timer with animated progress bars
+
+Create a slideshow of wallpapers (check unsplash random api?)
+
+Add weather API?
+
+Add quotes?
+
+
+
+
+
+Style notes:
+
+dark wallpapers or overlay
+mint green (glowing?) monochromatic colours
