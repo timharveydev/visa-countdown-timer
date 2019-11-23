@@ -3,12 +3,12 @@
 	padding: 0;
 }
 
-/* Variables */
+/* VARIABLES */
 :root {
 	--accent-color: #00CAFF;
 }
 
-/* Global */
+/* GLOBAL */
 body {
 	background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(https://source.unsplash.com/collection/8951545/1920x1080);
 	width: 100vw;
@@ -27,16 +27,25 @@ body {
 	justify-content: space-around;
 }
 
-/* Welcome Msg */
+/* WELCOME MSG */
 #welcome-msg {
 	font-size: 2.5rem;
 }
 
-/* Countdown */
+/* COUNTDOWN */
 #countdown .flex-wrapper {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+}
+
+#countdown .flex-wrapper div {
+	margin-bottom: 25px;
+	background-color: rgba(0,0,0,0.5);
+	width: 80px;
+	padding: 20px 10px;
+	border: 3px solid var(--accent-color);
+	border-radius: 20px;
 }
 
 #countdown span {
@@ -47,8 +56,21 @@ body {
 	font-size: 1.2rem;
 }
 
-/* Quote */
+/* QUOTE */
 blockquote {
-	font-family: 'Nanum Pen Script', cursive;
-	font-size: 1.5rem;
+	width: 70%;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+blockquote p {
+	font-family: 'Amatic SC', cursive;
+	font-size: 1.6rem;
+	margin-bottom: 10px;
+}
+
+blockquote footer {
+	text-align: right;
+	width: 70%;
+	font-size: 0.9rem;
 }
