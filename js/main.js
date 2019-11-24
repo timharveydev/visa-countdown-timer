@@ -1,9 +1,6 @@
-//UNIVERSAL VARIABLES
+//WELCOME MSG
 const currentDate = new Date();
 const currentHour = currentDate.getHours();
-
-
-//WELCOME MSG
 const welcomeMsg = document.querySelector("#welcome-msg");
 let greeting;
 
@@ -20,7 +17,62 @@ if (currentHour > 0 && currentHour < 12) {
 welcomeMsg.innerHTML = greeting + " Gosia!";
 
 
+
+
 //COUNTDOWN
+const endDate = "2021-09-18 23:59:59 GMT";
+
+function getTimeRemaining(endDate) { //this function finds the remaining time in miliseconds and divides it up into more useful units, then outputs into an object
+	const total = Date.parse(endDate) - Date.parse(new Date());
+	const seconds = Math.floor((total / 1000) % 60);
+	const minutes = Math.floor((total / 1000 / 60) % 60);
+	const hours = Math.floor((total / 1000 / 60 / 60) % 24);
+	const days = Math.floor((total / 1000 / 60 / 60 / 24) % 7);
+	const weeks = Math.floor((total / 1000 / 60 / 60 / 24 / 7) % 4);
+	const months = Math.floor((total / 1000 / 60 / 60 / 24 / 7 / 4) % 12);
+	const years = Math.floor(total / 1000 / 60 / 60 / 24 / 7 / 4 / 12);
+	return {
+		'total': total,
+		'seconds': seconds,
+		'minutes': minutes,
+		'hours': hours,
+		'days': days,
+		'weeks': weeks,
+		'months': months,
+		'years': years
+	};
+};
+
+function initClock(id, endDate) { //this function initializes the clock data into the correct HTML elements on the page
+	const clock = document.querySelector(id);
+	const yearSpan = clock.querySelector("#years");
+	const monthSpan = clock.querySelector("#months");
+	const weekSpan = clock.querySelector("#weeks");
+	const daySpan = clock.querySelector("#days");
+	const hourSpan = clock.querySelector("#hours");
+	const minuteSpan = clock.querySelector("#minutes");
+	const secondSpan = clock.querySelector("#seconds");
+
+	function updateClock() {
+		const t = getTimeRemaining(endDate);
+		yearSpan.innerHTML = t.years;
+		monthSpan.innerHTML = t.months;
+		weekSpan.innerHTML = t.weeks;
+		daySpan.innerHTML = t.days;
+		hourSpan.innerHTML = t.hours;
+		minuteSpan.innerHTML = t.minutes;
+		secondSpan.innerHTML = t.seconds;
+
+		if (t.total <= 0) { //this stops the clock refreshing when it hits 0
+			clearInterval(refreshInterval);
+		};
+	}
+	
+	updateClock();
+	const refreshInterval = setInterval(updateClock, 1000);
+}
+
+initClock("#countdown", endDate);
 
 
 
@@ -56,7 +108,7 @@ authorArray[8] = "Terry Pratchett";
 authorArray[9] = "George Carlin";
 authorArray[10] = "Jackie Chan";
 
-const index = Math.floor(Math.random() * quoteArray.length);
+const index = Math.floor(Math.random() * quoteArray.length); //randomly selects a matching index from each array
 
 quoteTxt.innerHTML = '"' + quoteArray[index] + '"';
 quoteSrc.innerHTML = '- ' + authorArray[index];
