@@ -43,8 +43,10 @@ function getTimeRemaining(endDate) { //this function finds the remaining time in
 	};
 };
 
-function initClock(id, endDate) { //this function initializes the clock data into the correct HTML elements on the page
+function initClock(id, endDate) { //this function initializes the clock data into the correct HTML elements on the page and refreshes every second
 	const clock = document.querySelector(id);
+
+	/* these variables hold the span elements where the countdown times will be placed */
 	const yearSpan = clock.querySelector("#years");
 	const monthSpan = clock.querySelector("#months");
 	const weekSpan = clock.querySelector("#weeks");
@@ -53,15 +55,65 @@ function initClock(id, endDate) { //this function initializes the clock data int
 	const minuteSpan = clock.querySelector("#minutes");
 	const secondSpan = clock.querySelector("#seconds");
 
+	/* these variables hold the label tags for the countdown time boxes */
+	const yearLabel = clock.querySelector("#year-label");
+	const monthLabel = clock.querySelector("#month-label");
+	const weekLabel = clock.querySelector("#week-label");
+	const dayLabel = clock.querySelector("#day-label");
+	const hourLabel = clock.querySelector("#hour-label");
+	const minuteLabel = clock.querySelector("#minute-label");
+	const secondLabel = clock.querySelector("#second-label");
+
 	function updateClock() {
 		const t = getTimeRemaining(endDate);
-		yearSpan.innerHTML = t.years;
-		monthSpan.innerHTML = t.months;
-		weekSpan.innerHTML = t.weeks;
-		daySpan.innerHTML = t.days;
-		hourSpan.innerHTML = t.hours;
-		minuteSpan.innerHTML = t.minutes;
-		secondSpan.innerHTML = t.seconds;
+
+		/* this code inputs the remaining times into the correct span variables' innerHTML, including leading zeros */
+		yearSpan.innerHTML = ("0" + t.years).slice(-2);
+		monthSpan.innerHTML = ("0" + t.months).slice(-2);
+		weekSpan.innerHTML = ("0" + t.weeks).slice(-2);
+		daySpan.innerHTML = ("0" + t.days).slice(-2);
+		hourSpan.innerHTML = ("0" + t.hours).slice(-2);
+		minuteSpan.innerHTML = ("0" + t.minutes).slice(-2);
+		secondSpan.innerHTML = ("0" + t.seconds).slice(-2);
+
+		/* this code pluralises or singularises the labels depending on the value of the time remaining being above "1" */
+		if (t.years > 1) {
+			yearLabel.innerHTML = "Years";
+		} else {
+			yearLabel.innerHTML = "Year";
+		}
+		if (t.months > 1) {
+			monthLabel.innerHTML = "Months";
+		} else {
+			monthLabel.innerHTML = "Month";
+		}
+		if (t.weeks > 1) {
+			weekLabel.innerHTML = "Weeks";
+		} else {
+			weekLabel.innerHTML = "Week";
+		}
+		if (t.days > 1) {
+			dayLabel.innerHTML = "Days";
+		} else {
+			dayLabel.innerHTML = "Day";
+		}
+		if (t.hours > 1) {
+			hourLabel.innerHTML = "Hours";
+		} else {
+			hourLabel.innerHTML = "Hour";
+		}
+		if (t.minutes > 1) {
+			minuteLabel.innerHTML = "Minutes";
+		} else {
+			minuteLabel.innerHTML = "Minute";
+		}
+		if (t.seconds > 1) {
+			secondLabel.innerHTML = "Seconds";
+		} else {
+			secondLabel.innerHTML = "Second";
+		}
+
+
 
 		if (t.total <= 0) { //this stops the clock refreshing when it hits 0
 			clearInterval(refreshInterval);
@@ -73,6 +125,7 @@ function initClock(id, endDate) { //this function initializes the clock data int
 }
 
 initClock("#countdown", endDate);
+
 
 
 

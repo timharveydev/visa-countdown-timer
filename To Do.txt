@@ -1,14 +1,1 @@
-Create a personalised welcome message that changes according to the time of day.
-
-Create a visa countdown timer (with animated progress bars?).
-
-Create a slideshow of wallpapers (check out unsplash random url).
-
-Add a quote section which changes each day.
-
-
-
-Style notes:
-
-dark wallpapers - black and white?
-mint green/blue highlight colours
+Animate progress boxes?
