@@ -77,40 +77,40 @@ function initClock(id, endDate) { //this function initializes the clock data int
 		secondSpan.innerHTML = ("0" + t.seconds).slice(-2);
 
 		/* this code pluralises or singularises the labels depending on the value of the time remaining being above "1" */
-		if (t.years > 1) {
-			yearLabel.innerHTML = "Years";
-		} else {
+		if (t.years === 1) {
 			yearLabel.innerHTML = "Year";
-		}
-		if (t.months > 1) {
-			monthLabel.innerHTML = "Months";
 		} else {
+			yearLabel.innerHTML = "Years";
+		}
+		if (t.months === 1) {
 			monthLabel.innerHTML = "Month";
-		}
-		if (t.weeks > 1) {
-			weekLabel.innerHTML = "Weeks";
 		} else {
+			monthLabel.innerHTML = "Months";
+		}
+		if (t.weeks === 1) {
 			weekLabel.innerHTML = "Week";
-		}
-		if (t.days > 1) {
-			dayLabel.innerHTML = "Days";
 		} else {
+			weekLabel.innerHTML = "Weeks";
+		}
+		if (t.days === 1) {
 			dayLabel.innerHTML = "Day";
-		}
-		if (t.hours > 1) {
-			hourLabel.innerHTML = "Hours";
 		} else {
+			dayLabel.innerHTML = "Days";
+		}
+		if (t.hours === 1) {
 			hourLabel.innerHTML = "Hour";
-		}
-		if (t.minutes > 1) {
-			minuteLabel.innerHTML = "Minutes";
 		} else {
+			hourLabel.innerHTML = "Hours";
+		}
+		if (t.minutes === 1) {
 			minuteLabel.innerHTML = "Minute";
-		}
-		if (t.seconds > 1) {
-			secondLabel.innerHTML = "Seconds";
 		} else {
+			minuteLabel.innerHTML = "Minutes";
+		}
+		if (t.seconds === 1) {
 			secondLabel.innerHTML = "Second";
+		} else {
+			secondLabel.innerHTML = "Seconds";
 		}
 
 
