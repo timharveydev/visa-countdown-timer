@@ -146,7 +146,7 @@ quoteArray[6] = "The scariest moment is always just before you start.";
 quoteArray[7] = "Whether you believe you can do a thing or not, you are right.";
 quoteArray[8] = "Coming back to where you started is not the same as never leaving.";
 quoteArray[9] = "When I ask how old your toddler is, I don't need to hear '27 months.' 'He's two' will do just fine. He's not a cheese. And I didn't really care in the first place.";
-quoteArray[10] = "Don't let circumstances controle you. You change your circumstances.";
+quoteArray[10] = "Don't let circumstances control you. You change your circumstances.";
 
 const authorArray = new Array();
 authorArray[0] = "Bernard M. Baruch";
