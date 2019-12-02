@@ -2,10 +2,10 @@ const currentHour = new Date().getHours();
 let greeting;
 
 if (currentHour < 12)
-	greeting = "Good morning";
+	greeting = 'Good morning';
 else if (currentHour < 18)
-	greeting = "Good afternoon";
+	greeting = 'Good afternoon';
 else if (currentHour <= 24)
-	greeting = "Good evening";
+	greeting = 'Good evening';
 
-document.getElementById("welcome-msg").innerHTML = greeting + ", Gosia!";
+document.getElementById("welcome-msg").innerHTML = greeting + ', Gosia!';
