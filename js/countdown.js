@@ -63,9 +63,8 @@ const initClock = (id, endDate) => { //this function initializes the clock data 
 		minuteLabel.innerHTML = (t.minutes === 1) ? "Minute" : "Minutes";
 		secondLabel.innerHTML = (t.seconds === 1) ? "Second" : "Seconds";
 
-		if (t.total <= 0) { //this stops the clock refreshing when it hits 0
+		if (t.total <= 0) //this stops the clock refreshing when it hits 0
 			clearInterval(refreshInterval);
-		};
 	}
 	
 	updateClock();
