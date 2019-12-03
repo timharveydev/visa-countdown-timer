@@ -1,0 +1,22 @@
+Read up on:
+
+* ternary operator
+* string interpolation
+* arrow functions
+* js style guide (airbnb one is a simpler one to follow)
+
+
+Code Review Comments:
+
+5. It's very good that you have a desire to add comments to js functions to explain what they do. Just make sure you make it in a standardised way, something along the lines of: https://medium.com/4thought-studios/documenting-javascript-projects-f72429da2eea
+
+6. Approach in lines 26-33 works, but seems a bit too complex. Might be easier to create a const object which would hold number of seconds per yeah, month, day, hour, etc.
+Then you can write a function that takes a number of seconds, a unit - and returns a number of units in the number and the number of seconds leftover.
+For example:
+myFunction(92571231, 'years')
+-> { years: 2, seconds: 29491231  }
+myFunction(29491231, 'months')
+-> { months: 11, seconds: 28831 }
+Then you can call this function recursively to get the result.
+
+10. Ternary operator will save you quite a few lines in the pluralisation code. Bonus points if you combine it with string interpolation to insert either 's' or '' at the end of the string.

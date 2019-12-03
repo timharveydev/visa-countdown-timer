@@ -1,4 +1,68 @@
 const endDate = '2021-09-18 23:59:59 GMT';
+let secondsRemaining = (Date.parse(endDate) - Date.parse(new Date())) / 1000;
+
+const secondsPerUnit = {
+	year : 31536000,
+	month : 2628000,
+	week : 604800,
+	day : 86400,
+	hour : 3600,
+	minute : 60
+}
+
+
+const getUnits = (time, unit) => {
+	switch (unit) {
+
+		case 'years':
+			return {
+				years : Math.floor(time / secondsPerUnit.year),
+				seconds : time % secondsPerUnit.year
+			}
+			break;
+
+		case 'months':
+			return {
+				months : Math.floor(time / secondsPerUnit.month),
+				seconds : time % secondsPerUnit.month
+			}
+			break;
+
+		case 'weeks':
+			return {
+				weeks : Math.floor(time / secondsPerUnit.week),
+				seconds : time % secondsPerUnit.week
+			}
+			break;
+
+		case 'days':
+			return {
+				days : Math.floor(time / secondsPerUnit.day),
+				seconds : time % secondsPerUnit.day
+			}
+			break;
+
+		case 'hours':
+			return {
+				hours : Math.floor(time / secondsPerUnit.hour),
+				seconds : time % secondsPerUnit.hour
+			}
+			break;
+
+		case 'minutes':
+			return {
+				minutes : Math.floor(time / secondsPerUnit.minute),
+				seconds : time % secondsPerUnit.minute
+			}
+			break;
+	}
+}
+
+
+
+
+
+/*const endDate = '2021-09-18 23:59:59 GMT';
 
 const getTimeRemaining = endDate => { //this function finds the remaining time in miliseconds and divides it up into more useful units, then outputs into an object
 	const total = Date.parse(endDate) - Date.parse(new Date());
@@ -24,7 +88,7 @@ const getTimeRemaining = endDate => { //this function finds the remaining time i
 const initClock = (id, endDate) => { //this function initializes the clock data into the correct HTML elements on the page and refreshes every second
 	const clock = document.getElementById(id);
 
-	/* these variables hold the span elements where the countdown times will be placed */
+	// these variables hold the span elements where the countdown times will be placed
 	const yearSpan = clock.querySelector('#years');
 	const monthSpan = clock.querySelector('#months');
 	const weekSpan = clock.querySelector('#weeks');
@@ -33,7 +97,7 @@ const initClock = (id, endDate) => { //this function initializes the clock data 
 	const minuteSpan = clock.querySelector('#minutes');
 	const secondSpan = clock.querySelector('#seconds');
 
-	/* these variables hold the label tags for the countdown time boxes */
+	// these variables hold the label tags for the countdown time boxes
 	const yearLabel = clock.querySelector('#year-label');
 	const monthLabel = clock.querySelector('#month-label');
 	const weekLabel = clock.querySelector('#week-label');
@@ -45,7 +109,7 @@ const initClock = (id, endDate) => { //this function initializes the clock data 
 	const updateClock = () => {
 		const t = getTimeRemaining(endDate);
 
-		/* this code inputs the remaining times into the correct span variables' innerHTML, including leading zeros */
+		// this code inputs the remaining times into the correct span variables' innerHTML, including leading zeros
 		yearSpan.innerHTML = ('0' + t.years).slice(-2);
 		monthSpan.innerHTML = ('0' + t.months).slice(-2);
 		weekSpan.innerHTML = ('0' + t.weeks).slice(-2);
@@ -54,7 +118,7 @@ const initClock = (id, endDate) => { //this function initializes the clock data 
 		minuteSpan.innerHTML = ('0' + t.minutes).slice(-2);
 		secondSpan.innerHTML = ('0' + t.seconds).slice(-2);
 
-		/* this code pluralises or singularises the labels depending on the value of the time remaining being above "1" */
+		// this code pluralises or singularises the labels depending on the value of the time remaining being above "1"
 		yearLabel.innerHTML = (t.years === 1) ? 'Year' : 'Years';
 		monthLabel.innerHTML = (t.months === 1) ? 'Month' : 'Months';
 		weekLabel.innerHTML = (t.weeks === 1) ? 'Week' : 'Weeks';
@@ -71,4 +135,4 @@ const initClock = (id, endDate) => { //this function initializes the clock data 
 	const refreshInterval = setInterval(updateClock, 1000);
 }
 
-initClock('countdown', endDate);
+initClock('countdown', endDate);*/

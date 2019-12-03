@@ -28,7 +28,7 @@ body {
 }
 
 /* WELCOME MSG */
-#welcome-msg {
+h1 {
 	font-size: 2.5rem;
 }
 

@@ -1,11 +1,10 @@
-const currentHour = new Date().getHours();
 let greeting;
 
-if (currentHour < 12)
+if (new Date().getHours() < 12)
 	greeting = 'Good morning';
-else if (currentHour < 18)
+else if (new Date().getHours() < 17)
 	greeting = 'Good afternoon';
-else if (currentHour <= 24)
+else if (new Date().getHours() <= 24)
 	greeting = 'Good evening';
 
-document.getElementById("welcome-msg").innerHTML = greeting + ', Gosia!';
+document.querySelector('h1').innerHTML = greeting + ', Gosia!';

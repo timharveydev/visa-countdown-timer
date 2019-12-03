@@ -15,5 +15,5 @@ const quoteBank = {
 // generates a random index from the quoteBank
 const randomKey = Math.floor(Math.random() * Object.keys(quoteBank).length);
 // applies the random index to the quoteBank and returns a matching key and value
-document.getElementById('quote-txt').innerHTML = '"' + Object.values(quoteBank)[randomKey] + '"';
-document.getElementById('quote-src').innerHTML = '- ' + Object.keys(quoteBank)[randomKey];
+document.querySelector('blockquote p').innerHTML = '"' + Object.values(quoteBank)[randomKey] + '"';
+document.querySelector('blockquote footer').innerHTML = '- ' + Object.keys(quoteBank)[randomKey];
