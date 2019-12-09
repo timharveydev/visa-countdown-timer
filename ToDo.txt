@@ -1,6 +1,5 @@
 Read up on:
 
-* string interpolation
 * arrow functions
 * js style guide (airbnb one is a simpler one to follow)
 
