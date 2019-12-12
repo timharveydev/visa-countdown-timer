@@ -1,3 +1,4 @@
+// holds the total number of seconds in each denomination of time
 const secsPerUnit = {
 	'year' : 31536000,
 	'month' : 2628000,
@@ -7,16 +8,17 @@ const secsPerUnit = {
 	'minute' : 60,
 	'second' : 1
 }
-
+// input a time value in seconds and a unit to output e.g. year, month, day. Outputs the number of said unit and the number of seconds leftover.
 const getTime = (time, unit) => {
 	return {
 		[unit] : Math.floor(time / secsPerUnit[unit]),
 		leftover : time % secsPerUnit[unit]
 	}
 }
-
+// declares the total time remaining (let seconds), uses the 'getTime' function to input the time units into the HTML, pluralises the HTML lable, updates the 'let seconds' with the remainder each time. '0' and '.slice' are used to ensure each unit in the countdown is preceded by '0' if it is only one character long.
 const updateClock = () => {
 	let seconds = (Date.parse('2021-09-18 23:59:59 GMT') - Date.parse(new Date())) / 1000;
+	// cancels the refresh interval (declared below) when the time remaining reaches 0.
 	if (seconds <=0)
 		clearInterval(refreshInterval);
 
@@ -49,4 +51,5 @@ const updateClock = () => {
 }
 
 updateClock();
+// updates the countdown every second
 const refreshInterval = setInterval(updateClock, 1000);
