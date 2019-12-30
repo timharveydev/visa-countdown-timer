@@ -1,4 +1,3 @@
-// holds the authors as keys and the quotes as values
 const quoteBank = {
   'Bernard M. Baruch' : 'Be who you are and say what you feel, because those who mind don’t matter and those who matter don’t mind.',
   'Albert Einstein' : 'Strive not to be a success, but rather to be of value.',
@@ -12,8 +11,8 @@ const quoteBank = {
   'George Carlin' : 'When I ask how old your toddler is, I don\'t need to hear "27 months." "He\'s two" will do just fine. He\'s not a cheese. And I didn\'t really care in the first place.',
   'Jackie Chan' : 'Don\'t let circumstances control you. You change your circumstances.'
 };
-// generates a random index from the quoteBank
+
 const randomKey = Math.floor(Math.random() * Object.keys(quoteBank).length);
-// applies the random index to the quoteBank and returns a matching key and value
+
 document.querySelector('blockquote p').innerHTML = '"' + Object.values(quoteBank)[randomKey] + '"';
 document.querySelector('blockquote footer').innerHTML = '- ' + Object.keys(quoteBank)[randomKey];
