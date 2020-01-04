@@ -3,7 +3,7 @@ let greeting;
 
 if (currentHour < 12)
 	greeting = 'Good morning';
-else if (currentHour < 17)
+else if (currentHour < 18)
 	greeting = 'Good afternoon';
 else if (currentHour <= 24)
 	greeting = 'Good evening';

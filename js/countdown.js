@@ -7,7 +7,7 @@ const secsPerUnit = {
 	'minutes' : 60,
 	'seconds' : 1
 }
-
+// units should be entered in plural
 const secsToUnit = (seconds, unit) => {
 	return {
 		[unit] : Math.floor(seconds / secsPerUnit[unit]),
@@ -20,15 +20,16 @@ const updateClock = () => {
   if (secondsRemaining <= 0)
 		clearInterval(refreshInterval);
 
+  // units should be entered in plural
   const assignUnitsToClock = (unit) => {
     const unitObject = secsToUnit(secondsRemaining, unit);
 
-    document.querySelector(`#${unit} span`).innerHTML = ('0' + unitObject[unit]).slice(-2);
+    document.querySelector(`#${unit} span`).innerHTML = `0${unitObject[unit]}`.slice(-2);
     document.querySelector(`#${unit} p`).innerHTML = (unitObject[unit] === 1) ? `${unit}`.slice(0, -1) : `${unit}`;
     secondsRemaining = unitObject.remainder;
   }
   
-  for (i = 0; i < 7; i++) {
+  for (let i = 0; i < 7; i++) {
     assignUnitsToClock(Object.keys(secsPerUnit)[i]);
   }
 }

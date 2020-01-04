@@ -14,5 +14,5 @@ const quoteBank = {
 
 const randomKey = Math.floor(Math.random() * Object.keys(quoteBank).length);
 
-document.querySelector('blockquote p').innerHTML = '"' + Object.values(quoteBank)[randomKey] + '"';
-document.querySelector('blockquote footer').innerHTML = '- ' + Object.keys(quoteBank)[randomKey];
+document.querySelector('blockquote p').innerHTML = `"${Object.values(quoteBank)[randomKey]}"`;
+document.querySelector('blockquote footer').innerHTML = `- ${Object.keys(quoteBank)[randomKey]}`;
