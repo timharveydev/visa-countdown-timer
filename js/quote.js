@@ -1,3 +1,4 @@
+// Object keys are authors - values are quotations
 const quoteBank = {
   'Bernard M. Baruch' : 'Be who you are and say what you feel, because those who mind don’t matter and those who matter don’t mind.',
   'Albert Einstein' : 'Strive not to be a success, but rather to be of value.',
@@ -12,7 +13,9 @@ const quoteBank = {
   'Jackie Chan' : 'Don\'t let circumstances control you. You change your circumstances.'
 };
 
-const randomKey = Math.floor(Math.random() * Object.keys(quoteBank).length);
+// Generates random index from quoteBank
+const randomIndex = Math.floor(Math.random() * Object.keys(quoteBank).length);
 
-document.querySelector('blockquote p').innerHTML = `"${Object.values(quoteBank)[randomKey]}"`;
-document.querySelector('blockquote footer').innerHTML = `- ${Object.keys(quoteBank)[randomKey]}`;
+// Assigns random author and corresponding quotation from quoteBank to HTML
+document.querySelector('blockquote p').innerHTML = `"${Object.values(quoteBank)[randomIndex]}"`;
+document.querySelector('blockquote footer').innerHTML = `- ${Object.keys(quoteBank)[randomIndex]}`;

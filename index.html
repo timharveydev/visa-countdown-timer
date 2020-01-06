@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Bzium!</title>
+    <!-- Style Sheet -->
     <link rel="stylesheet" href="css/main.css">
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Amatic+SC&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <div class="container">
-      <h1></h1>
-      <section id="countdown">
+      <h1><!-- Welcome message - see welcome.js --></h1>
+      <section id="countdown"><!-- Countdown timer - see countdown.js -->
         <div class="flex-wrapper">
+          <!-- Div blocks below: span tags hold remaining time - p tags specify unit of time -->
           <div id="years">
             <span></span>
             <p></p>
@@ -42,15 +45,17 @@
             <span></span>
             <p></p>
           </div>
+          <!-- End div blocks -->
         </div>
         <p>until you can become a UK citizen!</p>
       </section>
-      <blockquote>
-        <p></p>
-        <footer></footer>
+      <blockquote> <!-- See quote.js -->
+        <p><!-- Quotation --></p>
+        <footer><!-- Author --></footer>
       </blockquote>
     </div>
   </body>
+  <!-- Javascript Files -->
   <script src="js/welcome.js"></script>
   <script src="js/countdown.js"></script>
   <script src="js/quote.js"></script>

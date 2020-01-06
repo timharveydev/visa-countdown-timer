@@ -1,3 +1,4 @@
+/* RESET */
 * {
 	margin: 0;
 	padding: 0;
@@ -8,7 +9,7 @@
 	--accent-color: #00FFC2;
 }
 
-/* GLOBAL */
+/* PAGE FORMATTING */
 body {
 	background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(https://source.unsplash.com/collection/8951545/1920x1080);
 	width: 100vw;
@@ -39,7 +40,7 @@ h1 {
 	align-items: center;
 }
 
-#countdown .flex-wrapper div {
+#countdown .flex-wrapper div { /* Boxes around numbers */
 	margin-bottom: 25px;
 	background-color: rgba(0,0,0,0.5);
 	width: 80px;
@@ -67,13 +68,13 @@ blockquote {
 	margin: 0 auto;
 }
 
-blockquote p {
+blockquote p { /* Quotation */
 	font-family: 'Amatic SC', cursive;
 	font-size: 1.6rem;
 	margin-bottom: 10px;
 }
 
-blockquote footer {
+blockquote footer { /* Author */
 	text-align: right;
 	width: 70%;
 	font-size: 0.9rem;
