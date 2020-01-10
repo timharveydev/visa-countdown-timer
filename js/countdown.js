@@ -1,11 +1,11 @@
 const secondsPerUnit = {
-	'years' : 31536000,
-	'months' : 2628000,
-	'weeks' : 604800,
-	'days' : 86400,
-	'hours' : 3600,
-	'minutes' : 60,
-	'seconds' : 1
+  'years' : 31536000,
+  'months' : 2628000,
+  'weeks' : 604800,
+  'days' : 86400,
+  'hours' : 3600,
+  'minutes' : 60,
+  'seconds' : 1
 }
 
 /**
@@ -16,18 +16,18 @@ const secondsPerUnit = {
                    - 2nd key is remainder of seconds after conversion e.g. remainder : 13782
 */
 const convertSecondsToUnit = (seconds, unit) => {
-	return {
-		[unit] : Math.floor(seconds / secondsPerUnit[unit]),
-		remainder : seconds % secondsPerUnit[unit]
-	}
+  return {
+    [unit] : Math.floor(seconds / secondsPerUnit[unit]),
+    remainder : seconds % secondsPerUnit[unit]
+  }
 }
 
 // Runs code that assigns times to the countdown clock
 const updateClock = () => {
   // The total seconds remaining until the end date
-	let secondsRemaining = (Date.parse('2021-09-18 23:59:59 GMT') - Date.parse(new Date())) / 1000;
+  let secondsRemaining = (Date.parse('2021-09-18 23:59:59 GMT') - Date.parse(new Date())) / 1000;
   if (secondsRemaining <= 0)
-		clearInterval(refreshInterval);
+    clearInterval(refreshInterval);
 
   /**
     * @desc - calculates single unit of time and stores resulting object in unitObject variable
